@@ -17,21 +17,12 @@
   (command "rectangle" puntoinfizq puntosupder)
   )
 
-;ejercicio 1.3 ERROR
+;ejercicio 1.3 
 (defun c:foo_lamina()
-  (setq puntoinfizq (getpoint "especifique punto inf. izq"))
-  (setq puntosupder (getpoint "especifique punto sup. der"))
-  (setq puntosupizq (list(nth 0 puntoinfizq)(nth 1 puntosupder)))
-  (setq puntoinfder (list(nth 0 puntosupder)(nth 1 puntoinfizq)))
-  (setq ladoIzq(entnext))
-	 (command "line" puntoinfizq puntosupizq)
-  (setq ladoSup(entnext))
-	 (command "line" puntosupizq puntosupder)
-  (setq ladoDer(entnext))
-	 (command "line" puntosupder puntoinfder)
-  (setq ladoInf(entnext))
-	 (command "line" puntoinder puntoinfizq)
- )
+  (setq p1 (getpoint "especifique punto inf. izq"))
+  (setq p2 (getpoint "especifique punto sup. der"))
+  (setq p3 (list (+ 2.5 (nth 0 p1)) (+ 1 (nth 1 p1))))
+  (setq p4 (list (- (nth 0 p2) 1) (- (nth 1 p2) 1))) )
 
 ;ejercicio 1.4
 (defun c:foo_rectangulo2 ()
