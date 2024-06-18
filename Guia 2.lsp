@@ -1,8 +1,21 @@
 ;////////////////
 ;Guia 2 - AutoLISP
 ;////////////////
-;Ejercicio 2
+;Ejercicio 1
+(defun c:foo_piramide()
+  (command "osmode" 0)
+  (command "surftab1" 20)
+  (command "surftab2" 20)
+  (command "isolines" 20)
+  ;
+  (setq pBase  (getpoint "Click donde se creará la pirámide"))
+  (setq nLados (getint "Ingrese cantidad de lados"))
+  (setq Altura (getint "Ingrese altura"))
+  (setq ABase  (getint "Ingrese ancho de la base"))
+  (command "pyramid" "s" nLados pBase ABase Altura)
+  )
 
+;Ejercicio 2
 (defun c:foo_linterna()
   (command "osmode" 0)
   (command "surftab1" 20)
@@ -57,9 +70,7 @@
   (command "union" enganche1 enganche2 "")
 )
 
-
 ;Ejercicio 3
-;apagar onsnap
 (defun c:foo_lapicera()
   ;configuración de cad  
   (command "osmode" 0)
